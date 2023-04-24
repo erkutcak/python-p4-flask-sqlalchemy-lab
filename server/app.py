@@ -32,6 +32,7 @@ def animal_by_id(id):
 @app.route('/zookeeper/<int:id>')
 def zookeeper_by_id(id):
     zookeeper = Zookeeper.query.filter(Zookeeper.id == id).first()
+    response_body = f''
     response_body += f'<ul>ID: {zookeeper.id}</ul>'
     response_body += f'<ul>Name: {zookeeper.name}</ul>'
     response_body += f'<ul>Birthday: {zookeeper.birthday}</ul>'
@@ -42,6 +43,7 @@ def zookeeper_by_id(id):
 @app.route('/enclosure/<int:id>')
 def enclosure_by_id(id):
     enclosure = Enclosure.query.filter(Enclosure.id == id).first()
+    response_body = f''
     response_body += f'<ul>ID: {enclosure.id}</ul>'
     response_body += f'<ul>Environment: {enclosure.environment}</ul>'
     response_body += f'<ul>Open to Visitors: {enclosure.open_to_visitors}</ul>'
